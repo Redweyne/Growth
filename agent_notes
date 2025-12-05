@@ -1,0 +1,47 @@
+# Agent Notes - Growth App Enhancement - FRESH START
+
+## Project Info
+- **Repo:** https://github.com/Redweyne/Growth
+- **Email:** aposlash2021@gmail.com
+- **Git Commands Available:** YES - use bash for all git operations
+
+## Tech Stack
+- Backend: FastAPI (Python) on port 8001
+- Frontend: React on port 3000
+- Database: MongoDB
+- AI: Emergent LLM Key for AI Coach (Gemini 2.5 Flash)
+
+## Commands I Can Use
+- sudo supervisorctl restart frontend/backend/all
+- git add, commit, push, pull
+- curl for API testing
+- pip install, yarn add for packages
+- All bash commands available
+
+## USER'S CORE DEMAND
+Make this app BREATHTAKING - shock the world - GENUINELY help people transform.
+NOT childish colors/particles - MEANINGFUL and ROBUST functionality.
+
+## CURRENT STATE ASSESSMENT
+The app has:
+✓ Clean, dark UI with gold accents
+✓ Working auth system
+✓ Goals with milestones (working)
+✓ Habits with streaks (working)
+✓ Journal with moods (working)
+✓ AI Coach with 3 personalities
+✓ Vision Board (basic)
+✓ Analytics (working)
+✓ Ritual Mode (basic timer)
+
+## WHAT'S LACKING
+1. Feels "lackluster" and "bland" - not inspiring
+2. Functionality is "unmotivating" 
+3. Not "revolutionary"
+4. Doesn't deliver on the promise of transformation
+
+## INSTRUCTIONS FROM USER
+- ALWAYS SAVE PROGRESS BEFORE STARTING WORK
+- User is a dev, knows I can use bash commands
+- Don't ask unnecessary questions, just do the work
+- Read this file before every task
