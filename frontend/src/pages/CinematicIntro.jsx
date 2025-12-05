@@ -109,13 +109,13 @@ const CinematicIntro = ({ onComplete, userName }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-              className="space-y-6"
+              transition={{ duration: 1.2 }}
+              className="space-y-8"
             >
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+                transition={{ duration: 1.2, delay: 0.5 }}
                 className="text-2xl md:text-4xl text-white/70 font-light leading-relaxed"
               >
                 What if the only thing standing between you
@@ -123,7 +123,7 @@ const CinematicIntro = ({ onComplete, userName }) => {
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
+                transition={{ duration: 1.2, delay: 2.2 }}
                 className="text-2xl md:text-4xl text-white font-light leading-relaxed"
               >
                 and the person you want to become...
@@ -131,7 +131,7 @@ const CinematicIntro = ({ onComplete, userName }) => {
               <motion.p
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 2.2 }}
+                transition={{ duration: 1.2, delay: 4.2 }}
                 className="text-3xl md:text-5xl text-[#d4a574] font-semibold pt-4"
               >
                 ...is showing up every day?
