@@ -218,8 +218,8 @@ const Onboarding = ({ user, onComplete }) => {
       [currentStep.id]: optionId
     }));
 
-    // Brief delay to show selection, then advance
-    setTimeout(goToNextStep, 600);
+    // Longer delay to let the selection feel meaningful
+    setTimeout(goToNextStep, 1200);
   }, [currentStep, goToNextStep]);
 
   const completeOnboarding = () => {
