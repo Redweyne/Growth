@@ -263,13 +263,13 @@ const CinematicIntro = ({ onComplete, userName }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-              className="space-y-8"
+              transition={{ duration: 1.2 }}
+              className="space-y-10"
             >
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+                transition={{ duration: 1.2, delay: 0.5 }}
                 className="text-2xl md:text-4xl text-white font-light"
               >
                 Your journey of transformation
@@ -277,7 +277,7 @@ const CinematicIntro = ({ onComplete, userName }) => {
               <motion.p
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 1.2 }}
+                transition={{ duration: 1.5, delay: 2 }}
                 className="text-4xl md:text-6xl text-[#d4a574] font-bold"
               >
                 begins now.
@@ -287,7 +287,7 @@ const CinematicIntro = ({ onComplete, userName }) => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 2.2 }}
+                transition={{ delay: 3.5 }}
                 className="pt-8"
               >
                 <div className="flex items-center justify-center gap-2">
