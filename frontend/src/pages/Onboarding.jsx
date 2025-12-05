@@ -346,25 +346,51 @@ const Onboarding = ({ user, onComplete }) => {
                       <motion.button
                         key={option.id}
                         initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, delay: idx * 0.1 }}
+                        animate={{ 
+                          opacity: 1, 
+                          y: 0,
+                          scale: isSelected ? 1.02 : 1
+                        }}
+                        transition={{ duration: 0.5, delay: idx * 0.15 }}
                         onClick={() => handleSelect(option.id)}
+                        disabled={isTransitioning}
                         className={`
-                          relative p-6 md:p-8 rounded-2xl text-left transition-all duration-300 group
+                          relative p-6 md:p-8 rounded-2xl text-left transition-all duration-500 group
                           ${isSelected 
-                            ? 'ring-2 ring-[#d4a574] bg-[#d4a574]/15' 
-                            : 'bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/10'
+                            ? 'ring-2 ring-[#d4a574] bg-[#d4a574]/20 shadow-2xl shadow-[#d4a574]/20' 
+                            : 'bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/10 hover:shadow-xl'
                           }
+                          ${isTransitioning && !isSelected ? 'opacity-30' : ''}
                         `}
                       >
-                        <div className="flex items-start gap-5">
-                          <div className={`p-4 rounded-xl bg-gradient-to-br ${option.gradient || 'from-gray-600 to-gray-700'} shadow-lg shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                        {/* Selection glow effect */}
+                        {isSelected && (
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#d4a574]/10 to-transparent"
+                          />
+                        )}
+                        
+                        <div className="flex items-start gap-5 relative z-10">
+                          <motion.div 
+                            className={`p-4 rounded-xl bg-gradient-to-br ${option.gradient || 'from-gray-600 to-gray-700'} shadow-lg shrink-0 transition-transform duration-300`}
+                            animate={{
+                              scale: isSelected ? 1.1 : 1,
+                              rotate: isSelected ? [0, -5, 5, 0] : 0
+                            }}
+                            transition={{ duration: 0.5 }}
+                          >
                             <Icon className="w-6 h-6 text-white" />
-                          </div>
+                          </motion.div>
                           
                           <div className="flex-1">
-                            <h3 className="text-xl font-bold text-white mb-2">{option.title}</h3>
-                            <p className="text-white/60">{option.description}</p>
+                            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#d4a574] transition-colors">
+                              {option.title}
+                            </h3>
+                            <p className="text-white/60 group-hover:text-white/80 transition-colors">
+                              {option.description}
+                            </p>
                           </div>
 
                           {isSelected && (
