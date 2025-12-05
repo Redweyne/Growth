@@ -228,13 +228,13 @@ const CinematicIntro = ({ onComplete, userName }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-6"
+              transition={{ duration: 1 }}
+              className="space-y-8"
             >
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.6 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 1, delay: 0.5 }}
                 className="text-xl md:text-2xl text-white/50"
               >
                 Welcome,
@@ -242,7 +242,7 @@ const CinematicIntro = ({ onComplete, userName }) => {
               <motion.h1
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.6, type: "spring", stiffness: 100 }}
+                transition={{ duration: 1.5, delay: 1.5, type: "spring", stiffness: 100 }}
                 className="text-6xl md:text-9xl font-bold text-white tracking-tight"
               >
                 {firstName}
@@ -250,7 +250,7 @@ const CinematicIntro = ({ onComplete, userName }) => {
               <motion.div
                 initial={{ width: 0, opacity: 0 }}
                 animate={{ width: 150, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
+                transition={{ duration: 1, delay: 2.8 }}
                 className="h-1 mx-auto bg-gradient-to-r from-transparent via-[#d4a574] to-transparent"
               />
             </motion.div>
