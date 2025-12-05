@@ -293,21 +293,37 @@ const Onboarding = ({ user, onComplete }) => {
             {currentStep.type === 'reflection' && (
               <div className="text-center py-20">
                 <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1 }}
-                  className="text-3xl md:text-5xl text-white font-light leading-relaxed mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.5 }}
+                  className="text-3xl md:text-5xl text-white font-light leading-relaxed mb-10"
                 >
                   {currentStep.question}
                 </motion.p>
                 <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.6 }}
-                  transition={{ duration: 1, delay: 1 }}
-                  className="text-xl text-white/50 max-w-2xl mx-auto leading-relaxed"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 0.6, y: 0 }}
+                  transition={{ duration: 1.5, delay: 1.8 }}
+                  className="text-xl md:text-2xl text-white/50 max-w-3xl mx-auto leading-relaxed"
                 >
                   {currentStep.subtext}
                 </motion.p>
+                {/* Breathing indicator */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0.3 }}
+                  transition={{ duration: 1, delay: 4 }}
+                  className="mt-16"
+                >
+                  <motion.div
+                    className="w-16 h-16 mx-auto rounded-full border-2 border-[#d4a574]/30"
+                    animate={{ 
+                      scale: [1, 1.2, 1],
+                      opacity: [0.3, 0.6, 0.3]
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  />
+                </motion.div>
               </div>
             )}
 
