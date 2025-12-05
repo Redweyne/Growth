@@ -14,7 +14,7 @@ const JOURNEY_STEPS = [
     type: 'reflection',
     question: "Before we begin, take a breath.",
     subtext: "This moment matters. You're not just opening an app — you're making a decision about who you want to become.",
-    duration: 4000,
+    duration: 7000,
     ambient: 'pulse'
   },
   {
