@@ -6,18 +6,18 @@ const CinematicIntro = ({ onComplete, userName }) => {
   const firstName = userName?.split(' ')[0] || 'Champion';
 
   const phases = [
-    // Phase 0: Darkness awakens
-    { duration: 1500 },
-    // Phase 1: The question that starts it all
-    { duration: 4000 },
-    // Phase 2: The uncomfortable truth
-    { duration: 4500 },
-    // Phase 3: The promise
-    { duration: 4000 },
-    // Phase 4: Their name - recognition
-    { duration: 3000 },
-    // Phase 5: The invitation
-    { duration: 3500 },
+    // Phase 0: Darkness awakens - let them settle in
+    { duration: 2500 },
+    // Phase 1: The question that starts it all - give time to absorb
+    { duration: 7000 },
+    // Phase 2: The uncomfortable truth - powerful quote needs breathing room
+    { duration: 8000 },
+    // Phase 3: The promise - this is the commitment, let it sink in
+    { duration: 7000 },
+    // Phase 4: Their name - recognition and personal connection
+    { duration: 5000 },
+    // Phase 5: The invitation - final moment before transformation
+    { duration: 5000 },
   ];
 
   useEffect(() => {
