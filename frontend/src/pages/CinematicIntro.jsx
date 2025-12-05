@@ -146,13 +146,13 @@ const CinematicIntro = ({ onComplete, userName }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-              className="space-y-8"
+              transition={{ duration: 1.2 }}
+              className="space-y-10"
             >
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.5 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+                transition={{ duration: 1, delay: 0.5 }}
                 className="text-xl md:text-2xl text-white/50 font-light italic"
               >
                 "We are what we repeatedly do.
@@ -160,7 +160,7 @@ const CinematicIntro = ({ onComplete, userName }) => {
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.5 }}
+                transition={{ duration: 1.2, delay: 2.5 }}
                 className="text-3xl md:text-5xl text-white font-bold leading-tight"
               >
                 Excellence, then, is not an act,
@@ -168,7 +168,7 @@ const CinematicIntro = ({ onComplete, userName }) => {
               <motion.p
                 initial={{ opacity: 0, scale: 1.1 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 2.8 }}
+                transition={{ duration: 1.2, delay: 4.8 }}
                 className="text-4xl md:text-6xl text-[#d4a574] font-bold"
               >
                 but a habit."
@@ -176,7 +176,7 @@ const CinematicIntro = ({ onComplete, userName }) => {
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.6 }}
-                transition={{ duration: 0.5, delay: 3.5 }}
+                transition={{ duration: 0.8, delay: 6.5 }}
                 className="text-lg text-white/40 pt-4"
               >
                 — Aristotle
