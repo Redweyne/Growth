@@ -191,13 +191,13 @@ const CinematicIntro = ({ onComplete, userName }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-              className="space-y-10"
+              transition={{ duration: 1.2 }}
+              className="space-y-12"
             >
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.3 }}
+                transition={{ duration: 1.2, delay: 0.5 }}
                 className="text-2xl md:text-3xl text-white/70 font-light"
               >
                 This is not another productivity app.
@@ -205,7 +205,7 @@ const CinematicIntro = ({ onComplete, userName }) => {
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 1.5 }}
+                transition={{ duration: 1.2, delay: 2.5 }}
                 className="text-3xl md:text-5xl text-white font-semibold leading-tight"
               >
                 This is a system for becoming
@@ -213,7 +213,7 @@ const CinematicIntro = ({ onComplete, userName }) => {
               <motion.p
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 2.8, type: "spring" }}
+                transition={{ duration: 1.5, delay: 4.5, type: "spring" }}
                 className="text-4xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-[#d4a574] via-[#e8c496] to-[#d4a574] font-bold"
               >
                 who you were meant to be.
