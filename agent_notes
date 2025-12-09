@@ -63,6 +63,29 @@ Every feature should be 1000x better - not superficial improvements.
 - App is fully operational and documented
 - Current state: App is functional but needs MORE DEPTH and EMOTIONAL IMPACT
 
+## NEW SESSION - "WHY THIS WORKS" BUTTON IMPLEMENTATION
+- OBJECTIVE: Add "Learn Why This Works" buttons to ALL major feature pages
+- These buttons will link to PhilosophyPage with deep explanations
+- Pages that need this button:
+  * Goals.jsx
+  * Habits.jsx  
+  * Journal.jsx
+  * VisionBoard.jsx
+  * Exercises.jsx
+  * AICoach.jsx
+  * Analytics.jsx
+  * RitualMode.jsx
+  * WisdomLibrary.jsx
+  * BurningDesire.jsx
+  * IdentityEvolution.jsx
+  * ObstacleTransformer.jsx
+  * HabitStacking.jsx
+  * MorningAlgorithm.jsx
+  * PremeditatioPractice.jsx
+  
+- STATUS: Starting implementation
+- COMMITTING AFTER EACH PAGE UPDATE
+
 ## IMPORTANT FILES
 1. **CURRENT_STATUS_OF_THE_APP.md** - COMPLETE documentation of entire app
    - Read this FIRST in every new session
