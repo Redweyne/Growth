@@ -12,10 +12,14 @@ import uuid
 from datetime import datetime, timezone, timedelta
 import jwt
 from passlib.context import CryptContext
-from emergentintegrations.llm.chat import LlmChat, UserMessage
+import litellm
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
+
+# Setup logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # MongoDB connection
 mongo_url = os.environ['MONGO_URL']
@@ -511,16 +515,20 @@ Be thoughtful, challenging, and help users see that every obstacle contains the 
         
         session_id = request.context.get('session_id', str(uuid.uuid4())) if request.context else str(uuid.uuid4())
         
-        chat = LlmChat(
-            api_key=AI_API_KEY,
-            session_id=session_id,
-            system_message=context_info
-        ).with_model("gemini", "gemini-2.5-flash")
+        messages = [
+            {"role": "system", "content": context_info},
+            {"role": "user", "content": request.message}
+        ]
         
-        user_message = UserMessage(text=request.message)
-        response = await chat.send_message(user_message)
+        response = await litellm.acompletion(
+            model="gemini/gemini-2.0-flash",
+            messages=messages,
+            api_key=AI_API_KEY
+        )
         
-        return AICoachResponse(response=response, session_id=session_id)
+        response_text = response.choices[0].message.content
+        
+        return AICoachResponse(response=response_text, session_id=session_id)
     
     except Exception as e:
         logger.error(f"AI Coach error: {str(e)}")
@@ -1358,12 +1366,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
