@@ -65,3 +65,8 @@ externalPort = 80
 localPort = 8000
 externalPort = 8000
 exposeLocalhost = true
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["bash", "-c", "cd backend && python -m uvicorn server:app --host 0.0.0.0 --port 5000 & cd frontend && npx serve -s build -l 3000"]
+build = ["bash", "-c", "cd frontend && npm run build"]
