@@ -11,7 +11,7 @@ packages = ["cargo", "libiconv", "libxcrypt", "rustc"]
 [userenv.shared]
 DB_NAME = "growth_mindset"
 JWT_SECRET = "replit-jwt-secret-change-in-production-12345"
-REACT_APP_BACKEND_URL = "https://8bb3ff02-0b81-402c-8d48-34d22c04c2d7-00-r7ycqidq79jc.worf.replit.dev"
+REACT_APP_BACKEND_URL = "https://656785be-ab89-475f-95f7-50ea39e2b460-00-2sd9h2pam4ifd.riker.replit.dev:8000"
 
 [workflows]
 runButton = "Project"
@@ -47,7 +47,7 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd backend && python -m uvicorn server:app --host localhost --port 8000 --reload"
+args = "cd backend && python -m uvicorn server:app --host 0.0.0.0 --port 8000 --reload"
 waitForPort = 8000
 
 [workflows.workflow.metadata]
@@ -64,7 +64,6 @@ externalPort = 80
 [[ports]]
 localPort = 8000
 externalPort = 8000
-exposeLocalhost = true
 
 [deployment]
 deploymentTarget = "autoscale"
