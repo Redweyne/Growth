@@ -415,10 +415,14 @@ class MorningRoutineCompletion(BaseModel):
 
 
 def hash_password(password: str) -> str:
-    return pwd_context.hash(password)
+    # Bcrypt has a 72-byte limit, so truncate if necessary
+    password_bytes = password.encode('utf-8')[:72]
+    return pwd_context.hash(password_bytes.decode('utf-8', errors='ignore'))
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
-    return pwd_context.verify(plain_password, hashed_password)
+    # Apply same truncation as hash_password for consistency
+    password_bytes = plain_password.encode('utf-8')[:72]
+    return pwd_context.verify(password_bytes.decode('utf-8', errors='ignore'), hashed_password)
 
 def create_token(user_id: str) -> str:
     expiration = datetime.now(timezone.utc) + timedelta(days=JWT_EXPIRATION_DAYS)
