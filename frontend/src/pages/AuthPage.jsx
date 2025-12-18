@@ -94,7 +94,8 @@ const AuthPage = ({ onLogin }) => {
       <audio
         ref={audioRef}
         loop
-        src="https://cdn.pixabay.com/download/audio/2022/03/24/audio_d1c4ac83b3.mp3"
+        crossOrigin="anonymous"
+        src="https://assets.mixkit.co/active_storage/sfx/2729/2729-preview.mp3"
         className="hidden"
       />
       
