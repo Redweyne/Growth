@@ -41,12 +41,25 @@ Configured for autoscale deployment:
 - Serves frontend static files
 
 ## Recent Changes
+- 2024-12-18: Created Transformation Roadmap
+  - Pivoting from dashboard-centric to Duolingo-style lesson experience
+  - See TRANSFORMATION_ROADMAP.md for complete plan
+  - Core focus: Daily lessons with Wisdom → Action → Reflection → Reward loop
 - 2024-12-17: Initial Replit setup
   - Replaced emergentintegrations with litellm for AI features
   - Configured frontend for Replit proxy (allowedHosts: 'all')
   - Set up workflows for development
   - Added deployment configuration
 
+## Transformation Vision
+The app is being transformed into a **guided self-transformation journey** (like Duolingo for personal growth):
+- Core loop: Lesson → Micro-Action → Reflection → Reward → Mentor Closure
+- Wisdom Worlds with Chapters and Lessons
+- Home screen = "Today's Lesson" (not dashboard)
+- XP and Streaks tied to lesson completion only
+- Tools (Journal, Habits, Goals) become supporting features
+
 ## Notes
 - MongoDB credentials need to be provided by user
 - AI coaching uses Gemini 2.0 Flash model
+- See TRANSFORMATION_ROADMAP.md for full implementation plan
