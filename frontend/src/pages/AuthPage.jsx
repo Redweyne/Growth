@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 import axios from 'axios';
-import { Eye, EyeOff, ArrowRight, Loader2, Volume2, VolumeX } from 'lucide-react';
+import { Eye, EyeOff, ArrowRight, Loader2 } from 'lucide-react';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
@@ -19,16 +19,25 @@ const AuthPage = ({ onLogin }) => {
     name: '',
   });
   const [loading, setLoading] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef(null);
 
   useEffect(() => {
-    // Play cinematic background music on mount
+    // Play cinematic music only during opening animation (3 seconds)
     if (audioRef.current) {
-      audioRef.current.volume = 0.3;
+      audioRef.current.volume = 0.4;
       audioRef.current.play().catch(() => {
         // Autoplay might be blocked, that's fine
       });
+      
+      // Stop music after cinematic ends (3 seconds)
+      const timer = setTimeout(() => {
+        if (audioRef.current) {
+          audioRef.current.pause();
+          audioRef.current.currentTime = 0;
+        }
+      }, 3000);
+      
+      return () => clearTimeout(timer);
     }
   }, []);
 
@@ -76,40 +85,16 @@ const AuthPage = ({ onLogin }) => {
     }
   };
 
-  const toggleMute = () => {
-    if (audioRef.current) {
-      if (isMuted) {
-        audioRef.current.play();
-        setIsMuted(false);
-      } else {
-        audioRef.current.pause();
-        setIsMuted(true);
-      }
-    }
-  };
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] flex relative">
-      {/* Cinematic Background Music */}
+      {/* Cinematic Background Music - plays only during opening animation */}
       <audio
         ref={audioRef}
-        loop
         crossOrigin="anonymous"
-        src="https://assets.mixkit.co/active_storage/sfx/2729/2729-preview.mp3"
+        src="https://assets.mixkit.co/active_storage/sfx/2911/2911-preview.mp3"
         className="hidden"
       />
-      
-      {/* Mute Button */}
-      <motion.button
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-        onClick={toggleMute}
-        className="absolute top-6 right-6 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white"
-        title={isMuted ? 'Unmute' : 'Mute'}
-      >
-        {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-      </motion.button>
       {/* Left Panel - Branding */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
         {/* Subtle gradient background */}
