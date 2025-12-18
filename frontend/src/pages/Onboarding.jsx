@@ -183,19 +183,8 @@ const Onboarding = ({ user, onComplete }) => {
   const firstName = user?.name?.split(' ')[0] || 'Champion';
 
   useEffect(() => {
-    // Play epic cinematic music during entire onboarding
-    if (audioRef.current) {
-      audioRef.current.volume = 0.35;
-      audioRef.current.play().catch(() => {
-        // Autoplay might be blocked, that's fine
-      });
-    }
-
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
-    };
+    // Music can be added later with a properly hosted audio file
+    // For now, focusing on core functionality
   }, []);
 
   const currentStep = JOURNEY_STEPS[stepIndex];
@@ -259,15 +248,6 @@ const Onboarding = ({ user, onComplete }) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-black relative overflow-hidden">
-      {/* Epic Cinematic Music */}
-      <audio
-        ref={audioRef}
-        loop
-        crossOrigin="anonymous"
-        src="https://cdn.pixabay.com/download/audio/2024/10/31/audio_0ae12c0ba5.mp3?filename=orchestral-epic-final-640gb.mp3"
-        className="hidden"
-      />
-      
       {/* Deep ambient background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900 via-black to-black" />
       

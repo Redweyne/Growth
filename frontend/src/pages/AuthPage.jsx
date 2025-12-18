@@ -22,23 +22,7 @@ const AuthPage = ({ onLogin }) => {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    // Play cinematic music only during opening animation (3 seconds)
-    if (audioRef.current) {
-      audioRef.current.volume = 0.4;
-      audioRef.current.play().catch(() => {
-        // Autoplay might be blocked, that's fine
-      });
-      
-      // Stop music after cinematic ends (3 seconds)
-      const timer = setTimeout(() => {
-        if (audioRef.current) {
-          audioRef.current.pause();
-          audioRef.current.currentTime = 0;
-        }
-      }, 3000);
-      
-      return () => clearTimeout(timer);
-    }
+    // Music can be added later with proper hosting
   }, []);
 
   const handleSubmit = async (e) => {
@@ -88,13 +72,6 @@ const AuthPage = ({ onLogin }) => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] flex relative">
-      {/* Cinematic Background Music - plays only during opening animation */}
-      <audio
-        ref={audioRef}
-        crossOrigin="anonymous"
-        src="https://assets.mixkit.co/active_storage/sfx/2911/2911-preview.mp3"
-        className="hidden"
-      />
       {/* Left Panel - Branding */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
         {/* Subtle gradient background */}
