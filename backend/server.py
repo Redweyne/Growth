@@ -14,6 +14,7 @@ import uuid
 from datetime import datetime, timezone, timedelta
 import jwt
 from passlib.context import CryptContext
+import bcrypt
 import litellm
 import json
 
@@ -415,14 +416,16 @@ class MorningRoutineCompletion(BaseModel):
 
 
 def hash_password(password: str) -> str:
-    # Bcrypt has a 72-byte limit, so truncate if necessary
+    # Use bcrypt directly with 72-byte limit handled properly
     password_bytes = password.encode('utf-8')[:72]
-    return pwd_context.hash(password_bytes.decode('utf-8', errors='ignore'))
+    salt = bcrypt.gensalt()
+    return bcrypt.hashpw(password_bytes, salt).decode('utf-8')
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     # Apply same truncation as hash_password for consistency
     password_bytes = plain_password.encode('utf-8')[:72]
-    return pwd_context.verify(password_bytes.decode('utf-8', errors='ignore'), hashed_password)
+    hashed_bytes = hashed_password.encode('utf-8') if isinstance(hashed_password, str) else hashed_password
+    return bcrypt.checkpw(password_bytes, hashed_bytes)
 
 def create_token(user_id: str) -> str:
     expiration = datetime.now(timezone.utc) + timedelta(days=JWT_EXPIRATION_DAYS)
