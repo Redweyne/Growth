@@ -751,7 +751,7 @@ def get_exercises(user_id: str = Depends(get_current_user), db: Session = Depend
 
 
 @api_router.post("/ai-coach")
-async def ai_coach(request: AICoachRequest, user_id: str = Depends(get_current_user), db: Session = Depends(get_db)):
+def ai_coach(request: AICoachRequest, user_id: str = Depends(get_current_user), db: Session = Depends(get_db)):
     try:
         goals = db.query(GoalDB).filter(GoalDB.user_id == user_id, GoalDB.status == "active").limit(10).all()
         habits = db.query(HabitDB).filter(HabitDB.user_id == user_id).limit(10).all()
@@ -817,7 +817,7 @@ Be thoughtful, challenging, and help users see that every obstacle contains the 
             {"role": "user", "content": request.message}
         ]
         
-        response = await litellm.acompletion(
+        response = litellm.completion(
             model="gemini/gemini-2.0-flash",
             messages=messages,
             api_key=AI_API_KEY

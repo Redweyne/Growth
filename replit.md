@@ -19,13 +19,12 @@ A habit tracking and personal growth application built with React frontend and F
 
 ## Tech Stack
 - **Frontend**: React 19, CRACO, TailwindCSS, Radix UI
-- **Backend**: FastAPI, Uvicorn, Pydantic
-- **Database**: MongoDB (requires external connection)
+- **Backend**: FastAPI, Uvicorn, Pydantic, SQLAlchemy
+- **Database**: PostgreSQL (Replit built-in)
 - **AI**: LiteLLM for AI coaching features
 
 ## Environment Variables Required
-- `MONGO_URL` - MongoDB connection string (REQUIRED)
-- `DB_NAME` - Database name (default: growth_mindset)
+- `DATABASE_URL` - PostgreSQL connection (auto-configured by Replit)
 - `JWT_SECRET` - JWT signing secret
 - `AI_API_KEY` - API key for AI features (Gemini)
 - `REACT_APP_BACKEND_URL` - Backend URL for frontend API calls
@@ -41,6 +40,11 @@ Configured for autoscale deployment:
 - Serves frontend static files
 
 ## Recent Changes
+- 2024-12-18: Database Migration - MongoDB to PostgreSQL
+  - Migrated from MongoDB/Motor to PostgreSQL/SQLAlchemy
+  - Using Replit's built-in PostgreSQL database (no external API required)
+  - All 20 database tables auto-created via SQLAlchemy ORM
+  - Preserved all API endpoints and features
 - 2024-12-18: Created Transformation Roadmap
   - Pivoting from dashboard-centric to Duolingo-style lesson experience
   - See TRANSFORMATION_ROADMAP.md for complete plan
@@ -485,6 +489,6 @@ GET /api/analytics/transformation
 > Everything else is support.
 
 ## Notes
-- MongoDB credentials need to be provided by user
+- PostgreSQL database is auto-configured by Replit (DATABASE_URL)
 - AI coaching uses Gemini 2.0 Flash model
 - Full roadmap also available in TRANSFORMATION_ROADMAP.md
