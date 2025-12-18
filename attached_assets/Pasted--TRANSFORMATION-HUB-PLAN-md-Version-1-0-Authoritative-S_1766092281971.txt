@@ -1,0 +1,346 @@
+# 📘 TRANSFORMATION_HUB_PLAN.md
+
+**Version:** 1.0 (Authoritative)
+**Status:** Canonical – Do Not Deviate
+**Purpose:** Single Source of Truth for Product Direction
+
+---
+
+## 0. EXECUTIVE STATEMENT (READ FIRST — ALWAYS)
+
+This document defines the **identity, structure, and non-negotiable rules** of the Transformation Hub product.
+
+Any feature, refactor, redesign, or idea that **violates this document is incorrect**, even if it is technically impressive.
+
+The goal of this product is **not productivity**.
+The goal is **human transformation**.
+
+The goal is not to make users feel busy.
+The goal is to help users **become stronger, clearer, disciplined, purpose-driven individuals capable of leadership and responsibility**.
+
+This document exists to protect that goal.
+
+---
+
+## 1. PRODUCT VISION (THE WHY)
+
+### One-sentence definition
+
+> **Transformation Hub is a daily, guided self-transformation journey that turns timeless human wisdom into small, repeatable actions that reshape identity over time.**
+
+### The problem we solve
+
+People consume self-help endlessly but do not change.
+
+They read books, watch videos, save quotes — yet:
+
+* habits remain inconsistent
+* discipline collapses under stress
+* identity never truly shifts
+
+**Information without structure does not create leaders.**
+
+Transformation Hub bridges the gap between:
+
+> *Knowing what is right*
+> and
+> *Becoming someone who does it.*
+
+---
+
+## 2. WHAT THIS APP IS — AND IS NOT
+
+### This app IS:
+
+* A **guided journey**, not a toolbox
+* A **curriculum**, not a content feed
+* A **practice**, not entertainment
+* A **training ground for character**
+* A **Duolingo-style mastery system** for life skills
+* A **leader-forging environment**
+
+### This app IS NOT:
+
+* A productivity dashboard
+* A habit tracker first
+* A journaling app
+* A motivation feed
+* A quote app
+* A "do everything" self-help suite
+
+If the app ever feels like a dashboard, it has failed.
+
+---
+
+## 3. CORE PHILOSOPHY (NON-NEGOTIABLE)
+
+> **People do not change their lives by doing many things.
+> They change their lives by doing a few meaningful things consistently.**
+
+Therefore:
+
+* Simplicity is strength
+* Repetition creates depth
+* Focus creates transformation
+
+The product must **reduce cognitive load**, never increase it.
+
+---
+
+## 4. THE CORE LOOP (THE HEART OF THE PRODUCT)
+
+Every day, every user, every time:
+
+> **Lesson → Micro-Action → Reflection → Reward → Mentor Closure**
+
+No secondary loop may compete with this.
+
+---
+
+## 5. THE LESSON (ATOMIC UNIT OF TRANSFORMATION)
+
+### Definition
+
+A lesson is **not content**.
+A lesson is **an identity-shaping experience**.
+
+### Hard constraints
+
+* One lesson = one idea
+* One lesson = one action
+* One lesson = one reflection
+* Completion time ≤ 3 minutes
+* Emotional > informational
+* Action > explanation
+
+### Lesson structure (STRICT)
+
+1. **Wisdom**
+
+   * ≤ 120 words
+   * One principle only
+   * Clear, serious language
+
+2. **Micro-Action**
+
+   * Concrete
+   * Observable
+   * Executable immediately
+   * ≤ 2 minutes
+
+3. **Reflection**
+
+   * One short prompt
+   * Awareness-focused
+
+4. **Reward**
+
+   * XP
+   * Streak update
+   * Progress visualization
+
+5. **Mentor Comment**
+
+   * Emotional closure
+   * Identity reinforcement
+
+If a lesson feels interesting but inactive, it is wrong.
+
+---
+
+## 6. WHY THE LOOP IS SIMPLE (ON PURPOSE)
+
+Transformation comes from **repetition with meaning**, not novelty.
+
+* AA uses simple steps
+* Stoicism uses perception → action → acceptance
+* Atomic Habits uses tiny behaviors
+
+The loop must feel:
+
+* Calm
+* Serious
+* Grounded
+* Intentional
+
+Thrill comes from **identity progress**, not feature complexity.
+
+---
+
+## 7. WISDOM WORLDS (STRUCTURE OF MEANING)
+
+A Wisdom World is a **complete philosophical framework**, expressed as a mastery path.
+
+Examples:
+
+* Napoleon Hill — Desire, Faith, Persistence
+* Atomic Habits — Identity, Systems, Environment
+* Stoicism — Perception, Action, Will
+
+Users do not use features — they **walk paths**.
+
+---
+
+## 8. WORLD STRUCTURE (CANONICAL)
+
+Hierarchy:
+
+* World
+
+  * Chapters
+
+    * Lessons
+
+Constraints:
+
+* Linear progression (initially)
+* Clear locked/unlocked states
+* Visible completion
+* No branching paths in MVP
+
+Depth before breadth.
+
+---
+
+## 9. THE HOME OF THE APP
+
+> **The home screen is “Today’s Lesson”.**
+
+Not dashboards.
+Not stats.
+Not tools.
+
+Clarity creates consistency.
+
+---
+
+## 10. EXISTING FEATURES — SUPPORTING ROLES ONLY
+
+> **No feature may exist as a primary destination unless invoked by a lesson.**
+
+### Journal
+
+* Reflection storage
+* Lesson-invoked
+
+### Habits
+
+* Extend lesson actions
+* Created from lessons
+
+### Goals
+
+* Long-term narrative anchor
+* Contextual reference
+
+### AI Coach
+
+* Mentor voice
+* Reacts after lessons
+* Optional conversation
+
+If any tool competes with lessons, it must be demoted or hidden.
+
+---
+
+## 11. XP, STREAKS, AND PROGRESSION
+
+### XP
+
+* Earned only through lesson completion
+* Represents commitment
+
+### Streaks
+
+* Lesson days only
+* Meaningful, not punitive
+
+### Levels
+
+* Cosmetic motivation
+* No grind
+
+Progress must feel dignified.
+
+---
+
+## 12. MONETIZATION PHILOSOPHY
+
+Money is exchanged for **guidance and structure**, not tools.
+
+### Free Tier
+
+* Partial World 1
+* Daily lessons
+* Basic mentor feedback
+
+### Premium
+
+* All worlds
+* Advanced mentor
+* Deeper reflections
+* Tool integrations
+
+---
+
+## 13. DEVELOPMENT PHASES (STRICT ORDER)
+
+### Phase 1 — Core Loop Proof
+
+* One world
+* 15 lessons
+* Lesson page
+* XP + streak
+* Mentor comments
+
+### Phase 2 — Depth
+
+* Second world
+* Improved mentor
+* Better visuals
+
+### Phase 3 — Expansion
+
+* Identity evolution
+* Analytics
+* Rituals
+
+Never skip phases.
+
+---
+
+## 14. WHAT MUST NEVER HAPPEN
+
+* Adding a second core loop
+* Re-centering dashboards
+* Promoting tools over lessons
+* Overloading lessons
+* Feature creep
+* Building for power users first
+
+---
+
+## 15. SUCCESS CRITERIA (REAL METRICS)
+
+Success means:
+
+* Daily voluntary return
+* Calm, focused usage
+* Identity-based language
+* World completion
+* Serious word-of-mouth
+
+Vanity metrics are irrelevant.
+
+---
+
+## 16. FINAL OATH (FOR FUTURE YOU)
+
+> If I feel tempted to add complexity, I will reread this document.
+> If I doubt simplicity, I will remember that leaders are forged through repetition.
+
+This product exists to create **stronger humans**, not busier ones.
+
+---
+
+**END OF DOCUMENT — THIS FILE IS THE LAW**
