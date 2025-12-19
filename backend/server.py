@@ -15,7 +15,7 @@ from datetime import datetime, timezone, timedelta
 import jwt
 from passlib.context import CryptContext
 import bcrypt
-import litellm
+import google.generativeai as genai
 import json
 
 ROOT_DIR = Path(__file__).parent
@@ -41,7 +41,9 @@ JWT_SECRET = os.environ.get('JWT_SECRET', 'your-secret-key-change-in-production'
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRATION_DAYS = 30
 
-AI_API_KEY = os.environ.get('AI_API_KEY', os.environ.get('EMERGENT_LLM_KEY', ''))
+GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY', '')
+if GOOGLE_API_KEY:
+    genai.configure(api_key=GOOGLE_API_KEY)
 
 
 class UserDB(Base):
@@ -760,6 +762,9 @@ def get_exercises(user_id: str = Depends(get_current_user), db: Session = Depend
 @api_router.post("/ai-coach")
 def ai_coach(request: AICoachRequest, user_id: str = Depends(get_current_user), db: Session = Depends(get_db)):
     try:
+        if not GOOGLE_API_KEY:
+            raise HTTPException(status_code=500, detail="Google API key not configured")
+        
         goals = db.query(GoalDB).filter(GoalDB.user_id == user_id, GoalDB.status == "active").limit(10).all()
         habits = db.query(HabitDB).filter(HabitDB.user_id == user_id).limit(10).all()
         journals = db.query(JournalEntryDB).filter(JournalEntryDB.user_id == user_id).order_by(JournalEntryDB.created_at.desc()).limit(3).all()
@@ -819,18 +824,10 @@ Be thoughtful, challenging, and help users see that every obstacle contains the 
         context_info = mentor_prompts.get(mentor, mentor_prompts['hill'])
         session_id = request.context.get('session_id', str(uuid.uuid4())) if request.context else str(uuid.uuid4())
         
-        messages = [
-            {"role": "system", "content": context_info},
-            {"role": "user", "content": request.message}
-        ]
+        model = genai.GenerativeModel('gemini-2.0-flash', system_instruction=context_info)
+        response = model.generate_content(request.message)
+        response_text = response.text
         
-        response = litellm.completion(
-            model="gemini/gemini-2.0-flash",
-            messages=messages,
-            api_key=AI_API_KEY
-        )
-        
-        response_text = response.choices[0].message.content
         return {"response": response_text, "session_id": session_id}
     
     except Exception as e:
